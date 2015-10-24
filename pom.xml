@@ -28,6 +28,12 @@
             <artifactId>poi-excelant</artifactId>
             <version>3.10-FINAL</version>
         </dependency>
+
+        <dependency> <!-- Spark dependency -->
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.5.1</version>
+        </dependency>
     </dependencies>
 
     <build>
