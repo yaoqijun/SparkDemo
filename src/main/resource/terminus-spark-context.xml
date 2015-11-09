@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:hadoop="http://www.springframework.org/schema/hadoop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
+
+    <!-- basic Hive driver bean -->
+    <bean id="hiveDriver" class="org.apache.hive.jdbc.HiveDriver"/>
+
+    <hadoop:hive-client-factory id="hiveClientFactory"/>
+
+    <bean id="hiveDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource"
+          c:driver-ref="hiveDriver" c:url="jdbc:hive2://yaoqijuns-MacBook-Pro.local:14000/default" c:username="yaoqijun" c:password="yao4094230"/>
+
+    <!-- standard JdbcTemplate declaration -->
+    <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate" c:dataSource-ref="hiveDataSource"/>
+
+    <hadoop:hive-template id="hiveTemplate"/>
+</beans>
