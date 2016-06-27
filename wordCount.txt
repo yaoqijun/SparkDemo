@@ -1,0 +1,15 @@
+You can find the latest Spark documentation, including a programming
+guide, on the [project web page](http://spark.apache.org/documentation.html)
+and [project wiki](https://cwiki.apache.org/confluence/display/SPARK).
+This README file only contains basic setup instructions.
+Testing first requires [building Spark](#building-spark). Once Spark is built, tests
+can be run using:
+Spark uses the Hadoop core library to talk to HDFS and other Hadoop-supported
+storage systems. Because the protocols have changed in different versions of
+Hadoop, you must build Spark against the same version that your cluster runs.
+Please refer to the build documentation at
+["Specifying the Hadoop Version"](http://spark.apache.org/docs/latest/building-spark.html#specifying-the-hadoop-version)
+for detailed guidance on building for a particular distribution of Hadoop, including
+building for particular Hive and Hive Thriftserver distributions.
+Please refer to the [Configuration Guide](http://spark.apache.org/docs/latest/configuration.html)
+in the online documentation for an overview on how to configure Spark.
