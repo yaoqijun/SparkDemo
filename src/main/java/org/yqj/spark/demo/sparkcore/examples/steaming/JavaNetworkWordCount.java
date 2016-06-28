@@ -15,12 +15,12 @@ import java.util.Arrays;
  * Created by yaoqijun.
  * Date:2016-06-27
  * Email:yaoqj@terminus.io
- * Descirbe: java steam 通过 网络定时数量统计
+ * Descirbe: java steam 通过 网络定时数量统计 每次数据接受单词数量统计
  */
 public class JavaNetworkWordCount {
     public static void main(String[] args) {
         SparkConf sparkConf = new SparkConf().setAppName("sparkNetworkWordCount");
-        JavaStreamingContext ssc = new JavaStreamingContext(sparkConf, Durations.seconds(5));
+        JavaStreamingContext ssc = new JavaStreamingContext(sparkConf, Durations.seconds(60));
 
         JavaReceiverInputDStream<String> lines = ssc.socketTextStream("localhost", 9999, StorageLevels.MEMORY_AND_DISK_SER);
         JavaDStream<String> words = lines.flatMap(x-> {
