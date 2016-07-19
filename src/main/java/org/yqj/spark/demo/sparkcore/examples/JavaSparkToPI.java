@@ -16,6 +16,7 @@ import java.util.List;
 public class JavaSparkToPI {
     public static void main(String[] args) {
         SparkConf sparkConf = new SparkConf().setAppName("sparkPiValue");
+        sparkConf.setMaster("spark://yaoqijuns-MacBook-Pro.local:7077");
         JavaSparkContext javaSparkContext = new JavaSparkContext(sparkConf);
 
         int slices = 2;

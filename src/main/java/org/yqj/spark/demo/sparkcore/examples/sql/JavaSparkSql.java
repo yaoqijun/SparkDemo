@@ -25,7 +25,7 @@ public class JavaSparkSql {
         // read data
         System.out.println("*********** spark read data from text context **************");
         JavaRDD<Person> personJavaRDD = javaSparkContext.textFile("persons.txt").map(s->{
-           String[] personStr = s.split(",");
+            String[] personStr = s.split(",");
             Person person = new Person();
             person.setName(personStr[0]);
             person.setAge(Integer.valueOf(personStr[1].trim()));
